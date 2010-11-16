@@ -1,19 +1,19 @@
 Summary:	Meltho Syriac fonts
 Summary(pl.UTF-8):	Fonty syryjskie Meltho
 Name:		xorg-font-font-misc-meltho
-Version:	1.0.2
+Version:	1.0.3
 Release:	1
 License:	distributable if unmodified
 Group:		Fonts
 Source0:	http://xorg.freedesktop.org/releases/individual/font/font-misc-meltho-%{version}.tar.bz2
-# Source0-md5:	b6d53e8bcc06e25f868130a0c4619ab2
+# Source0-md5:	e3e7b0fda650adc7eb6964ff3c486b1c
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	fontconfig
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
-BuildRequires:	xorg-font-font-util >= 1.1
+BuildRequires:	xorg-font-font-util >= 1.2
 BuildRequires:	xorg-util-util-macros >= 1.3
 Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/OTF
