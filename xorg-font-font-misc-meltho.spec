@@ -2,7 +2,7 @@ Summary:	Meltho Syriac fonts
 Summary(pl.UTF-8):	Fonty syryjskie Meltho
 Name:		xorg-font-font-misc-meltho
 Version:	1.0.3
-Release:	1
+Release:	2
 License:	distributable if unmodified
 Group:		Fonts
 Source0:	http://xorg.freedesktop.org/releases/individual/font/font-misc-meltho-%{version}.tar.bz2
