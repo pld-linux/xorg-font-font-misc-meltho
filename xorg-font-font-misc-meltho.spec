@@ -1,23 +1,26 @@
 Summary:	Meltho Syriac fonts
 Summary(pl.UTF-8):	Fonty syryjskie Meltho
 Name:		xorg-font-font-misc-meltho
-Version:	1.0.3
-Release:	2
+Version:	1.0.4
+Release:	1
 License:	distributable if unmodified
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/releases/individual/font/font-misc-meltho-%{version}.tar.bz2
-# Source0-md5:	e3e7b0fda650adc7eb6964ff3c486b1c
-URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.57
+Source0:	https://xorg.freedesktop.org/releases/individual/font/font-misc-meltho-%{version}.tar.xz
+# Source0-md5:	9068872dedee1c14756e0fd8adf1d068
+URL:		https://xorg.freedesktop.org/
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	fontconfig
+BuildRequires:	pkgconfig >= 1:0.9.0
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
 BuildRequires:	xorg-font-font-util >= 1.2
-BuildRequires:	xorg-util-util-macros >= 1.3
+BuildRequires:	xorg-util-util-macros >= 1.20
+BuildRequires:	xz
 Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/OTF
-Obsoletes:	XFree86-fonts-Syriac
+Obsoletes:	XFree86-fonts-Syriac < 4.9
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -40,8 +43,10 @@ zabrania modyfikacji - szczegóły w pliku COPYING.
 %{__autoconf}
 %{__automake}
 %configure \
+%if "%{_gnu}" != "-gnux32"
 	--build=%{_host} \
 	--host=%{_host} \
+%endif
 	--with-fontdir=%{_fontsdir}/OTF
 
 %{__make}
@@ -63,5 +68,5 @@ fontpostinst OTF
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog README
+%doc COPYING ChangeLog README.md
 %{_fontsdir}/OTF/SyrCOM*.otf
